@@ -14,5 +14,11 @@ class Product extends Model
     protected $fillable = [
         'type_id',
         'date',
+        'quantity'
     ];
+
+    public function getType(){
+        return $this->belongsTo(ProductType::class, 'type_id', 'type_id');
+    }
+
 }
